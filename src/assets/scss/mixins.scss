@@ -1,0 +1,43 @@
+@mixin breakpoint($point) {
+    @if $point == xl {
+        @media (max-width: 1200px) {
+            @content;
+        }
+    } @else if $point == lg {
+        @media (max-width: 992px) {
+            @content;
+        }
+    } @else if $point == md {
+        @media (max-width: 768px) {
+            @content;
+        }
+    } @else if $point == sm {
+        @media (max-width: 576px) {
+            @content;
+        }
+    } @else if $point == xs {
+        @media (max-width: 360px) {
+            @content;
+        }
+    }
+}
+
+@mixin flexline($wrap: nowrap) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: $wrap;
+}
+
+@mixin flexcenter($flex: row) {
+    display: flex;
+    flex-direction: $flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin text($size: 14px, $weight: 400) {
+    font-family: $opensans;
+    font-size: $size;
+    font-weight: $weight;
+}
