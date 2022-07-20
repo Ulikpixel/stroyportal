@@ -1,10 +1,10 @@
 <template>
-    <div :class="list.length && value.length ? 'search active' : 'search'" id="search">
+    <div :class="list.length && value.length ? 'headerSearch active' : 'headerSearch'" id="search">
         <input type="text" placeholder="Cтроительные смеси" :value="value" @input="search">
-        <div class="search__icon" @click="getName">
+        <div class="headerSearch__icon" @click="getName">
             <img src="@/assets/images/icons/search.svg" alt="search/icon">
         </div>
-        <ul class="search__list" v-if="list.length && value.length">
+        <ul class="headerSearch__list" v-if="list.length && value.length">
             <li v-for="(name, index) in list" :key="`${index}${name}`" @click="chooseName(name)">{{ name }}</li>
         </ul>
     </div>
@@ -52,12 +52,16 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/scss/index.scss";
 
-.search {
+.headerSearch {
     width: 248px;
     height: 40px;
     border-radius: 4px;
     border: 1px solid #ECEFF1;
     position: relative;
+
+    @include breakpoint(lg) {
+        margin-bottom: 20px;
+    }
 
     &.active {
         border-bottom: none;

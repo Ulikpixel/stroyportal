@@ -9,8 +9,8 @@
                 <img src="@/assets/images/icons/share.svg" alt="share/icon">
             </h1>
             <NavButtons :list="categories" />
-            <div class="heroProduct">
-                <Cart />
+            <div class="hero__wrapper">
+                <Product />
                 <Advertising />
             </div>
         </div>
@@ -19,7 +19,7 @@
 
 <script>
 import NavButtons from '@/components/HomeView/Hero/components/NavButtons';
-import Cart from '@/components/HomeView/Hero/components/Cart';
+import Product from '@/components/HomeView/Hero/components/Product';
 import Advertising from '@/components/HomeView/Hero/components/Advertising';
 
 export default {
@@ -43,7 +43,7 @@ export default {
             ]
         }
     },
-    components: { NavButtons, Cart, Advertising }
+    components: { NavButtons, Product, Advertising }
 }
 </script>
 
@@ -65,9 +65,21 @@ export default {
         @include breakpoint(xs) {
             font-size: 16px;
         }
+
+        img {
+            width: 20px;
+            height: 20px;
+            margin-left: 4px;
+        }
     }
-    &Product {
+    &__wrapper {
         margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        @include breakpoint(lg) {
+            flex-direction: column;
+            align-items: center;
+        }
     }
 }
 </style>

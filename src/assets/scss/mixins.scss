@@ -22,10 +22,10 @@
     }
 }
 
-@mixin flexline($wrap: nowrap) {
+@mixin flexline($wrap: nowrap, $justify: space-between, $align: center) {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: $justify;
+    align-items: $align;
     flex-wrap: $wrap;
 }
 

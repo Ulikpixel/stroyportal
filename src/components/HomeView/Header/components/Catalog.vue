@@ -1,5 +1,5 @@
 <template>
-    <div class="catalog">
+    <div class="headerCatalog">
         <button class="hamburger hamburger--collapse" type="button"
             @click="active = !active">
             <span class="hamburger-box">
@@ -7,7 +7,7 @@
             </span>
         </button>
         <p>Каталог</p>
-        <ul :class="active ? 'catalog__content active' : 'catalog__content'">
+        <ul :class="active ? 'headerCatalog__content active' : 'headerCatalog__content'">
             <li>1 element</li>
             <li>2 element</li>
             <li>3 element</li>
@@ -30,7 +30,7 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/scss/index.scss';
 
-.catalog {
+.headerCatalog {
     width: 116px;
     min-height: 40px;
     background: $orange;
@@ -38,6 +38,10 @@ export default {
     position: relative;
     @include flexline;
     justify-content: center;
+
+    @include breakpoint(lg) {
+        margin-bottom: 20px;
+    }
 
     p {
         margin-left: 10px;

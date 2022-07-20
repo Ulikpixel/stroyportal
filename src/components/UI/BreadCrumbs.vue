@@ -34,9 +34,9 @@ export default {
     }
 
     &__item {
-        margin-right: 40px;
+        margin-right: 20px;
         display: flex;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
 
         &:nth-last-child(1) {
             margin-right: 0;
@@ -77,7 +77,7 @@ export default {
     }
 
     &__arrow {
-        margin-left: 22px;
+        margin-left: 20px;
         @include flexcenter;
 
         @include breakpoint(sm) {

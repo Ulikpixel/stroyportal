@@ -1,6 +1,6 @@
 <template>
-    <div class="list">
-        <div :class="list.length ? 'list__icon active' : 'list__icon'">
+    <div class="headerList" @click="active = !active">
+        <div :class="active ? 'headerList__icon active' : 'headerList__icon'">
             <img src="@/assets/images/icons/list.svg" alt="list/svg">
         </div>
         <p>Список</p>
@@ -11,9 +11,7 @@
 export default {
     data() {
         return {
-            list: [
-                { message: 'Труба', price: 10 }
-            ]
+            active: true
         }
     }
 }
@@ -22,7 +20,7 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/scss/index.scss";
 
-.list {
+.headerList {
     width: 111px;
     height: 40px;
     background: #FAFBFC;

@@ -1,29 +1,23 @@
 <template>
-    <div class="navButtons">
-        <button class="navButtons__prev">
-            <img src="@/assets/images/icons/arrow.svg" alt="arrow/icon">
+    <div class="heroNavButtons">
+        <button class="heroNavButtons__prev">
+            <Arrow hoverColor="red" hover="red" />
         </button>
-        <div class="navButtons__wrapper">
-            <div class="navButtons__track">
+        <div class="heroNavButtons__wrapper">
+            <div class="heroNavButtons__track">
                 <button v-for="(btn, index) in list" :key="`${index}-${btn.title}`">{{ btn.title }}</button>
             </div>
         </div>
-        <button class="navButtons__next">
-            <img src="@/assets/images/icons/arrow.svg" alt="arrow/icon">
-            <!-- <Arrow /> -->
+        <button class="heroNavButtons__next">
+            <Arrow />
         </button>
     </div>
 </template>
 
 <script>
-import Arrow from "@/assets/images/icons/arrow.svg";
-
 export default {
     props: {
         list: { type: Array, default: [] }
-    },
-    components: {
-        Arrow
     }
 }
 </script>
@@ -33,7 +27,7 @@ export default {
 
 $border: #ECEFF1;
 
-.navButtons {
+.heroNavButtons {
     height: 48px;
     border: solid 1px red;
     background: $bg;
@@ -75,6 +69,7 @@ $border: #ECEFF1;
             &:nth-last-child(1) {
                 border-right: 0;
             }
+
             @include breakpoint(sm) {
                 font-size: 12px;
                 padding: 6px 20px;
@@ -87,19 +82,30 @@ $border: #ECEFF1;
         width: 48px;
         height: 48px;
         cursor: pointer;
+
+        svg {
+            path {
+                fill: red !important;
+            }
+        }
     }
 
     & &__prev {
         border-right: 1px solid $border;
-        img {
+
+        svg {
             transform: rotate(90deg);
         }
     }
 
     & &__next {
         border-left: 1px solid $border;
-        img {
+
+        svg {
             transform: rotate(-90deg);
+            &:hover {
+                fill: red !important;
+            }
         }
     }
 }

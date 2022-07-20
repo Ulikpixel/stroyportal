@@ -12,7 +12,7 @@
 }
 
 .container {
-  max-width: 1110px;
+  max-width: 1142px;
   width: 100%;
   margin: 0 auto;
   padding: 0 15px !important;

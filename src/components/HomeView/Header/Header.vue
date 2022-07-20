@@ -200,6 +200,10 @@ export default {
                 width: 100%;
             }
 
+             @include breakpoint(sm) {
+                padding-top: 120px;
+             }
+
             .search {
                 @include breakpoint(lg) {
                     width: 100%;
@@ -215,6 +219,9 @@ export default {
                     top: 50px;
                     left: 15px;
                 }
+                 @include breakpoint(sm) {
+                    top: 73px;
+                 }
             }
 
             .list {
@@ -225,8 +232,8 @@ export default {
         }
 
         &__logo,
-        .list,
-        .catalog {
+        .headerList,
+        .headerCatalog {
             margin-right: 24px;
 
             @include breakpoint(lg) {
