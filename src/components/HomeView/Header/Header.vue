@@ -43,7 +43,6 @@
 import Catalog from "@/components/HomeView/Header/components/Catalog";
 import Search from "@/components/HomeView/Header/components/Search";
 import List from "@/components/HomeView/Header/components/List";
-import Burger from "@/components/UI/Burger.vue";
 
 export default {
     data() {
@@ -54,8 +53,7 @@ export default {
     components: {
         Catalog,
         Search,
-        List,
-        Burger
+        List
     },
     methods: {
         toggleMenu() {
